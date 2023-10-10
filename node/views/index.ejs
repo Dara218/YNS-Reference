@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs')  %>
+<body>
+    <h1>Home</h1>
+    <%- include('./partials/home.ejs')  %>
+
+    <!-- <% if(blogs.length > 0) {%>
+        <% blogs.forEach(blog => { %>
+            <div>
+                <p><%= blog.title %></p>
+                <p><%= blog.snippet %></p>
+            </div>
+        <% }) %>
+    <% } else {%>
+        <p>No blogs...</p>
+    <%}%> -->
+
+    <% if(products.length > 0) {%>
+        <% products.forEach(product => { %>
+            <a href="./product/<%= product.id %>" style="color: black">
+                <ul>
+                    <li><b>Title:</b> <%= product.title %></li>
+                    <li><b>Price:</b> <%= product.price %></li>
+                    <li><b>Description:</b> <%= product.description %></li>
+                </ul>
+            </a>
+        <% }) %>
+    <% } else {%>
+        <p>No products...</p>
+    <%}%>
+</body>
+</html>

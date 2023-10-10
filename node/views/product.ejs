@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs')  %>
+<body>
+    <h1>Update Blog</h1>
+    <%- include('./partials/home.ejs')  %>
+    
+    <form action="/update-product/<%= product.id %>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="text" name="title" id="title" placeholder="title" value="<%= product.title %>">
+        <input type="number" name="price" id="price" placeholder="price" value="<%= product.price %>">
+        <input type="text" name="description" id="description" placeholder="description" value="<%= product.description %>">
+        <input type="hidden" name="image" id="image" value="https://www.youtube.com/watch?v=m7YSTtiPMl4">
+        <input type="hidden" name="category" id="category" value="electronic">
+        <input type="submit" value="Submit" name="submit" id="submit">
+    </form>
+    
+    <form action="/delete-product/<%= product.id %>" method="post">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
